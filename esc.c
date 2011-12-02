@@ -18,11 +18,18 @@ isesc(const char *path, size_t size)
 		return !isesc(&path[-1], size - 1);
 	return 0;
 #else
+#if 1
 	int off = 0;
 	while (off++ < size
 	    && path[-off] == '\\')
 		; /* nothing */
-	return --off % 2;
+#else
+	int off = 1;
+	while (off <= size
+	    && path[-off] == '\\')
+		off++;
+#endif /* 1 */
+	return off % 2 == 0;
 #endif /* RECURSIVE */
 }
 
