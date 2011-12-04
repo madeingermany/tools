@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2011 Christian Jahn. All rights reserved.
  *
- * @(#)esc.c
+ * @(#)esc1.c
  *
  */
 
