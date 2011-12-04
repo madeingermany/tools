@@ -34,9 +34,7 @@ main(int argc, char *argv[])
 	while (**argv != '\0') {
 		switch (**argv) {
 		case '$':
-			 /* FALLTHROUGH */
 		case '%':
-			 /* FALLTHROUGH */
 		case '&':
 			printf("esc: %c is %sescaped\n",
 			    **argv, esc ? "" : "NOT ");

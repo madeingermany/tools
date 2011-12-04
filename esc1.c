@@ -58,9 +58,7 @@ main(int argc, char *argv[])
 	while (*arg != '\0') {
 		switch (*arg) {
 		case '$':
-			/* FALLTHROUGH */
 		case '%':
-			/* FALLTHROUGH */
 		case '&':
 			printf("esc: %c is %sescaped\n",
 			    *arg, isesc(arg, arg - *argv) ? "" : "NOT ");
