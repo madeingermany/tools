@@ -22,14 +22,14 @@ main(int argc, char *argv[])
 
 	while (**argv != '\0') {
 		switch (**argv) {
-		case '\\':
-			esc = !esc;
-			break;
 		case '$':
 		case '%':
 		case '&':
 			printf("esc: %c is %sescaped\n",
 			    **argv, esc ? "" : "NOT ");
+			break;
+		case '\\':
+			esc = !esc;
 			break;
 		default:
 			esc = 0;
