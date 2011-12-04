@@ -51,13 +51,16 @@ main(int argc, char *argv[])
 		fprintf(stderr,
 		    "usage: esc string\n");
 		exit(1);
+		/* NOTREACHED */
 	}
 	arg = *++argv; /* skip program name */
 
 	while (*arg != '\0') {
 		switch (*arg) {
 		case '$':
+			/* FALLTHROUGH */
 		case '%':
+			/* FALLTHROUGH */
 		case '&':
 			printf("esc: %c is %sescaped\n",
 			    *arg, isesc(arg, arg - *argv) ? "" : "NOT ");

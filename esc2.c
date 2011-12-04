@@ -27,13 +27,16 @@ main(int argc, char *argv[])
 		fprintf(stderr,
 		    "usage: esc string\n");
 		exit(1);
+		/* NOTREACHED */
 	}
 	argv++; /* skip program name */
 
 	while (**argv != '\0') {
 		switch (**argv) {
 		case '$':
+			 /* FALLTHROUGH */
 		case '%':
+			 /* FALLTHROUGH */
 		case '&':
 			printf("esc: %c is %sescaped\n",
 			    **argv, esc ? "" : "NOT ");
