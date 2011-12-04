@@ -4,6 +4,16 @@
  * @(#)esc1.c
  *
  */
+/*
+ * $ ./esc1 'a\\\$b$c\%d\\%e&f\&';
+ * esc: $ is escaped
+ * esc: $ is NOT escaped
+ * esc: % is escaped
+ * esc: % is NOT escaped
+ * esc: & is NOT escaped
+ * esc: & is escaped
+ * $
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
