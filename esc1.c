@@ -27,17 +27,10 @@ isesc(const char *arg, size_t size)
 		return !isesc(&arg[-1], size - 1);
 	return 0;
 #else
-#if 1
 	int off = 0;
 	while (off++ < size
 	    && arg[-off] == '\\')
 		; /* nothing */
-#else
-	int off = 1;
-	while (off <= size
-	    && arg[-off] == '\\')
-		off++;
-#endif /* 1 */
 	return off % 2 == 0;
 #endif /* RECURSIVE */
 }
